@@ -41,7 +41,7 @@ global-styling:
        css/espaco-trio.css: {}
        css/cores.css: {} 
        css/contraste.css: {}     
-
+          
 global-scripts:
     js: 
       js/highcontrast.js: { scope: footer } 

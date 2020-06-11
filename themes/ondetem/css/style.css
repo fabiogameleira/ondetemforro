@@ -521,6 +521,7 @@ h2.location-title {
 	/*font-weight: 600;*/
 }
 
+/*
 .eventos .views-row .views-field.views-field-field-endereco-1 a:hover,
 .eventos .views-row .views-field.views-field-field-facebook a:hover,
 .eventos .views-row .views-field.views-field-field-twitter a:hover, 
@@ -530,7 +531,7 @@ h2.location-title {
 	color: #000000;
 }
 
-
+*/
 
 .eventos .views-field.views-field-field-data-value {
 	margin-bottom: 10px;
@@ -542,6 +543,62 @@ h2.location-title {
 .eventos .views-field.views-field-field-endereco-administrative-area,
 .eventos .views-field.views-field-field-endereco-country-code {
   line-height: 5px;
+}
+
+.eventos a.fa-globe { color: #66666e; }
+.eventos a.fa-globe:hover,
+.eventos a.fa-globe:focus {
+  color: #00aced;
+  /*background-color: #fff;*/
+}
+
+.eventos a.fa-map-marker{ color: #66666e;  }
+.eventos a.fa-map-marker:hover,
+.eventos a.fa-map-marker:focus {
+  color: #cc181e;
+  /*background-color: #fff;*/
+}
+
+.eventos a.fa-facebook { color: #66666e;  }
+.eventos a.fa-facebook:hover,
+.eventos a.fa-facebook:focus {
+  color: #3b5998;
+  /*background-color: #fff;*/
+}
+
+.eventos  a.fa-group  { color: #66666e; }
+.eventos  a.fa-group:hover,
+.eventos  a.fa-group:focus {
+  color: #3b5998;
+  /*background-color: #fff;*/
+}
+
+.eventos  a.fa-twitter  { color: #66666e;  }
+.eventos  a.fa-twitter:hover,
+.eventos  a.fa-twitter:focus {
+  color: #00aced;	
+  /*background-color: #fff;*/
+}
+
+.eventos  a.fa-youtube  { color: #66666e; }
+.eventos  a.fa-youtube:hover,
+.eventos  a.fa-youtube:focus {
+  color: #cc181e;	
+  /*background-color: #fff;*/
+}
+
+.eventos  a.fa-linkedin  { color: #66666e; }
+.eventos  a.fa-linkedin:hover,
+.eventos  a.fa-linkedin:focus {
+  color: #0d77b7;	
+  /*background-color: #fff;*/
+}
+
+.eventos  a.fa-instagram  { color: #66666e; }
+.eventos  a.fa-instagram:hover,
+..eventos a.fa-fa-instagram:focus {
+  color: #ec2779;	
+  /*background-color: #fff;*/
 }
 
 .pager .previous > a, .pager .previous > span {
@@ -576,6 +633,14 @@ h2.location-title {
 	}
 
 /* LINKS SOCIAIS */
+
+#block-siganos h2.block-title {
+	margin-top: 20px;
+    font-size: 1em;
+    padding-left: 17px;
+    margin-bottom: 0;
+    color: #5f643a;
+} 
 
 .links-sociais a.fa-facebook,
 .links-sociais a.fa-facebook:hover,
@@ -612,7 +677,23 @@ h2.location-title {
   /*background-color: #fff;*/
 }
 
+.links-sociais a.fa-instagram,
+.links-sociais a.fa-instagram:hover,
+.links-sociais a.fa-fa-instagram:focus {
+  color: #ec2779;	
+  /*background-color: #fff;*/
+}
+
 .circle {    border-radius: 50%;    margin: 0.15em;    font-size: 1.3em;	}
+
+.fa-globe {
+    padding: 0.30em 0em;
+}
+
+
+.fa-map-marker {
+    padding: 0.30em 0em;
+}
 
 .fa-facebook{
 	padding: 0.30em 0em;
@@ -633,12 +714,14 @@ h2.location-title {
 .fa-linkedin{
     padding: 0.31em 0em;
 	}
-	
+
+.fa-instagram{
+    padding: 0.31em 0em;
+	}
 	
 .links-sociais {
     margin: 0;
 	padding: 0;
-	    padding-top: 20px;
 	display: inline-flex;
 }
 
