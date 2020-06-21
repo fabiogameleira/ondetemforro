@@ -160,3 +160,8 @@ body.highcontrast {
 .highcontrast #user-login-form label {
     color: #000;
 }
+
+
+.highcontrast .eventos .views-row:hover  {
+    background-color: #4682b4;
+}

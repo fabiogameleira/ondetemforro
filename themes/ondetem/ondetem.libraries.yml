@@ -44,10 +44,12 @@ global-styling:
           
 global-scripts:
     js: 
-      js/highcontrast.js: { scope: footer } 
+      js/highcontrast.js: {} 
+      js/tratacampos.js: {} 
+      js/localidade.js: {} 
     dependencies:
     - core/jquery
     - core/jquery.once
-    
+    - core/drupalSettings
 
 

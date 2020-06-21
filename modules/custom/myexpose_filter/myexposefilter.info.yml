@@ -1,0 +1,7 @@
+name: My Expose Filter
+description: 'Converte campo texto do filtro para popup'
+package: Custom
+version: '8.x-1.0'
+project: 'myexposefilter'
+type: module
+core: '8.x'

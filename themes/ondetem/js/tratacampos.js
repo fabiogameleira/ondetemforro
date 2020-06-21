@@ -4,17 +4,16 @@ if (typeof jQuery === 'undefined') {
 
 (function($) {
        Drupal.behaviors.customToggler = {
-         attach: function(context, settings) {
-					
-					var pais = $("#edit-field-my-country-value");
-					var estado = $("#edit-field-my-state-value");
-					var troca_estado = $("#edit-field-my-state-value-wrapper");
-					var dia = $( ".date-display-single" ).html();		
+         attach: function(context) {		
+					var pais = $("#edit-field-pais-value"); 
+					var estado = $("#edit-field-estado-value");
+					var troca_estado = $(".form-item-field-estado-value");
+					//var dia = $( ".date-display-single" ).html();		
 					
 					pais.on('change', function() {
 						
-						var conteudo_pais = $( "#edit-field-my-country-value option:selected" ).text();
-						var conteudo_estado = $( "#edit-field-my-state-value option:selected" ).text();
+						var conteudo_pais = $( "#edit-field-pais-value option:selected" ).text();
+						var conteudo_estado = $( "#edit-field-estado-value option:selected" ).text();
 						
 						if ((conteudo_pais != "Todos" ) && (conteudo_pais != "Brasil" ) && (conteudo_estado == "Todos" ) ){
 							troca_estado.hide();
@@ -24,10 +23,9 @@ if (typeof jQuery === 'undefined') {
 							}	
 						});
 					
-					$(".date-display-single").html(function(index, text) {
-					return text.replace("<br><br><br>","");
-});
+					//$(".date-display-single").html(function(index, text) {
+					//return text.replace("<br><br><br>","");
+				    //});
 			}
         }
-	})(jQuery);
-	
+})(jQuery);
