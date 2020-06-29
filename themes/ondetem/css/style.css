@@ -3,6 +3,10 @@
  * your custom CSS modifications here.
  */
 
+* {
+  box-sizing: border-box;
+}
+
 html, body {
     font-size: 16px;
 }
@@ -125,6 +129,28 @@ ul.menu.menu--main.nav.navbar-nav > li > a.icon-videos  {
   background-repeat: no-repeat;
   background-position-x: 50%;
   background-position-y: 10px;
+}
+
+.discografia .field--name-field-download a  {
+	background-size: contain;
+    background-image: url(../images/icon/discografia-36.png);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 0;
+	padding-left: 20px;
+}
+
+.discografia a {
+
+}
+
+.discografia #edit-actions {
+	margin-top: 25px;
+    margin-left: 20px;
+}
+
+.eventos #edit-submit-eventos {
+		margin-top: 25px;
 }
 
 /* Objetivo do site */
@@ -407,7 +433,7 @@ h2.location-title {
 	font-size: 0.875em;	
 }
 
-.eventos .views-row {
+.eventos .views-row, .discografia .views-row {
     border: 1px solid #ccc;
     margin: 0px 0px 0px 0px;
     padding: 10px 10px 10px 10px;
@@ -428,52 +454,51 @@ h2.location-title {
 
 
 
-.eventos .view-filters {
+.view-filters {
     margin-bottom: 20px;
     margin-top: 10px;
 }
 
-.eventos .view-filters, .eventos legend {
+ .view-filters,  legend {
     color: #5f643a;
 }
 
-.eventos form {
+form {
     border: 1px solid #dddddd;
     box-shadow: 2px 2px 2px rgba(0,0,0,0.5);
     padding: 10px 10px 10px 10px;
     border-radius: 2px;
 }
 
-.eventos fieldset {
+fieldset {
   float: left;	
 }
 
-.eventos legend {
+legend {
 	border-bottom: none;
 	margin-bottom: 5px;
 }
 
-.eventos label,
-.eventos legend {
+label,
+legend {
     text-transform: uppercase;
 	font-size: 0.75em;
 }
 
-.eventos .views-exposed-form label,
-.eventos legend  {
+.views-exposed-form label, legend  {
     font-weight: bold;
 }
 
-.eventos .form--inline.form-inline.clearfix {
+.form--inline.form-inline.clearfix {
     margin: 0 auto;
 }
 
-.eventos .form-inline {
+.form-inline {
     margin-right: 10px;
 }
 
 @media (min-width: 768px) {}
-	.eventos .form-inline .form-group {
+	.form-inline .form-group {
 		float: left;
 	}
 }
@@ -609,15 +634,60 @@ h2.location-title {
      float: none; 
 }
 
-.discografia h2 {
-    font-size: 1.2em;
-    font-weight: 600;
-    margin-left: 15px;
+.discografia {
+}
+
+
+.discografia .field--name-node-title h3  {
+    font-size: 1em;
+    font-weight: 800;
+	color: #5f643a;
+	min-height: 36px;
+
 }
 .discografia img {
-	
-	border-radius: 107px;
+  /*border-radius: 107px;*/
+	margin: 0 auto;
 }
+
+.row-display-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row-display-flex > [class*='col-'] {
+  flex-grow: 1;
+}
+
+/*
+
+.discografia .views-row {
+    border: 1px solid #ccc;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+    border-style: solid;
+    border-right-style: groove;
+    border-right-color: #ccc;
+    border-right-width: 3px;
+    border-bottom-style: groove;
+    border-bottom-color: #ccc;
+    border-bottom-width: 3px;
+}
+*/
+
+
+.discografia .field--name-field-musica-letra { 
+	 font-size: 0.875em;
+     /*line-height: 1em;*/
+}
+
+.discografia   .field--name-field-download  {
+	font-size: 0.875em;
+    line-height: 1em;
+	min-height: 24px;
+	margin: 	20px 0 20px 0;
+}
+
 
 .contact-form .layout {
     border: 1px solid #dedede;
@@ -733,4 +803,29 @@ h2.location-title {
 
 .links-sociais a {
 	text-decoration: none;
+}
+
+.node--type-videos .paragraph--type--video {
+    float: left;
+    padding: 15px;
+    max-width: 310px;
+	}
+
+.node--type-videos .field--name-field-titulo {
+	height: 3em;
+}
+
+
+.node--type-videos {
+    border: 1px solid #ccc;
+    margin: 0px 0px 0px 0px;
+    padding: 10px 10px 10px 10px;
+    border-radius: 4px;
+    border-style: solid;
+    border-right-style: groove;
+    border-right-color: #ccc;
+    border-right-width: 3px;
+    border-bottom-style: groove;
+    border-bottom-color: #ccc;
+    border-bottom-width: 3px;
 }

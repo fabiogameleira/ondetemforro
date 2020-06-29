@@ -28,4 +28,16 @@ if (typeof jQuery === 'undefined') {
 				    //});
 			}
         }
+		
+		Drupal.behaviors.customHTML = {
+         attach: function(context) {		
+					var myview = $(".discografia"); 
+					
+					if (myview.length == 1 ) {
+					    $("div.view-content").addClass("row-display-flex");
+						}
+					
+          }
+		}
+		
 })(jQuery);
