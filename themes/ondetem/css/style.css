@@ -182,6 +182,13 @@ h2.location-title {
     font-size: 1.2em;
 }
 
+@media (max-width: 480px) {
+	.mapa {
+	  display: none;
+	}
+
+}
+
 .mapa h2.location-title {
    /*display: none;*/
 }
@@ -395,10 +402,21 @@ h2.location-title {
   margin-right: 10px;
 	
 }
-.eventos #edit-field-evento-anual-value--wrapper {
-   width: 200px;
-   margin-right: 10px;
-   float: left;
+
+@media (max-width: 480px) {
+	.eventos .form-control, .eventos .form-autocomplete, .eventos .edit-field-evento-anual-value--wrapper {
+	  width: 145px;	
+	  display: block;
+	  margin-right: 10px;
+		
+	}
+}
+
+@media (max-width: 480px) {
+	.eventos .form-autocomplete span.input-group-addon {
+    padding: 0;
+		
+	}
 }
 
 .rota, .facebook, .youtube, .twitter, .instagram, .site {
@@ -445,6 +463,13 @@ h2.location-title {
     border-bottom-style: groove;
     border-bottom-color: #ccc;
     border-bottom-width: 3px;
+}
+
+@media (max-width: 480px) {
+	.eventos .views-row {
+	     padding: 10px 10px 30px 10px;
+	}
+
 }
 
 .eventos .views-row:hover {
