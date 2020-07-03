@@ -8,7 +8,21 @@ if (typeof jQuery === 'undefined') {
 					var pais = $("#edit-field-pais-value"); 
 					var estado = $("#edit-field-estado-value");
 					var troca_estado = $(".form-item-field-estado-value");
-					//var dia = $( ".date-display-single" ).html();		
+					
+					var dia = $( "#edit-field-data-value" );		
+					
+					if (dia.val() == '') {
+						
+						hoje = new Date();
+						
+						var twoDigitday = ((hoje.getDate().length+1) === 1)? (hoje.getDate()) : '0' + (hoje.getDate());
+						var twoDigitMonth = ((hoje.getMonth().length+1) === 1)? (hoje.getMonth()+1) : '0' + (hoje.getMonth()+1);
+ 
+						var currentDate =  hoje.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitday ;
+		
+						dia.val(currentDate) ;
+						
+					}
 					
 					pais.on('change', function() {
 						
@@ -22,7 +36,7 @@ if (typeof jQuery === 'undefined') {
 							troca_estado.show();
 							}	
 						});
-					
+
 					//$(".date-display-single").html(function(index, text) {
 					//return text.replace("<br><br><br>","");
 				    //});

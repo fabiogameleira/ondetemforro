@@ -14,11 +14,14 @@ function myexposefilter_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\
 	
   if ($form['#id'] == "views-exposed-form-eventos-page-1") {
 
-		//Obter data do filtro
-	  $data= date($form['field_data_value']['value']['#default_value'] );
-		
-	  //ksm($data);	
-		
+	  //Obter data do filtro
+	  //$data= date($form['field_data_value']['value']['#default_value'] );
+	   
+	  //if (!$data) {
+
+		// $data = date("d/m/Y", strtotime(now));
+	 // }
+	   
 	  for($i =1; $i < 4; $i++){
 
 		switch ($i){
@@ -44,7 +47,7 @@ function myexposefilter_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\
 					//->pager(10); //specify results to return
 					$nids = $query->execute();
 			  				
-				
+		
 				// Preenche os combos do filtro de pesquisa com a palavra Todos
 				$options = array('' => 'Todos');
 				$form[$field_id .'_value']['#type'] = 'select';
