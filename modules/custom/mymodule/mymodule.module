@@ -19,7 +19,7 @@ function mymodule_node_presave(NodeInterface $node) {
 	   $node->field_endereco->country_code .','. $node->field_endereco->postal_code;
 	  
 	   If ($node->field_endereco->address_line1) {
-			$node->field_rota->uri = 'https://www.google.com/maps/dir/' . $endereco;
+			$node->field_rota->uri = 'https://www.google.com/maps/dir//' . $endereco;
 			$node->field_rota->text ="Obter rota para [node:field_local_do_evento]";
        }
        

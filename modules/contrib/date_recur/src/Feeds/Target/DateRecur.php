@@ -23,7 +23,7 @@ class DateRecur extends DateTime {
     return FieldTargetDefinition::createFromFieldDefinition($field_definition)
       ->addProperty('value')
       ->addProperty('end_value')
-	  ->addProperty('timezone')
+	  ->addProperty('timezone');
   }
 
   /**
