@@ -397,7 +397,7 @@ h2.location-title {
 }
 
 .eventos .form-control, .eventos .form-autocomplete {
-  width: 150px;	
+  width: 145px;	
   display: block;
   margin-right: 10px;
 	
@@ -405,7 +405,7 @@ h2.location-title {
 
 @media (max-width: 480px) {
 	.eventos .form-control, .eventos .form-autocomplete, .eventos .edit-field-evento-anual-value--wrapper {
-	  width: 145px;	
+	  width: 139px;	
 	  display: block;
 	  margin-right: 10px;
 		
@@ -451,6 +451,12 @@ h2.location-title {
 	font-size: 0.875em;	
 }
 
+@media (max-width: 480px) {
+	.eventos .form-item-field-evento-anual-value {
+		display: inline-block;
+		margin-right: 20px;
+	}
+}
 .eventos .views-row, .discografia .views-row {
     border: 1px solid #ccc;
     margin: 0px 0px 0px 0px;
@@ -777,6 +783,9 @@ legend {
 .links-sociais a.fa-fa-instagram:focus {
   color: #ec2779;	
   /*background-color: #fff;*/
+}
+.links-sociais.links-sociais > li {
+	padding-right: 3px;
 }
 
 .circle {    border-radius: 50%;    margin: 0.15em;    font-size: 1.3em;	}
