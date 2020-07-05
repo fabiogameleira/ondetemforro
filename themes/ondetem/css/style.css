@@ -719,13 +719,9 @@ legend {
 	margin: 	20px 0 20px 0;
 }
 
-
-.contact-form .layout {
-    border: 1px solid #dedede;
-    border-radius: 2px;
-    padding: 20px;
-    width: 50%;
-}
+.webform-submission-contact-form {
+	 max-width: fit-content;
+}   
 
 .marcador-grupo {
     background-color: #c7eac7;
@@ -868,4 +864,9 @@ legend {
 	font-size: 1em;
     color: #666666;
     font-weight: 600;
+}
+
+.alert-success a {
+	color: #FC0;
+	
 }
