@@ -863,3 +863,9 @@ legend {
     border-bottom-color: #ccc;
     border-bottom-width: 3px;
 }
+
+#block-addtoanybuttons h2 {
+	font-size: 1em;
+    color: #666666;
+    font-weight: 600;
+}
