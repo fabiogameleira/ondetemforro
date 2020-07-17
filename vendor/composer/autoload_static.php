@@ -32,6 +32,10 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpGPX\\' => 7,
+        ),
         'Z' => 
         array (
             'Zend\\Stdlib\\' => 12,
@@ -70,6 +74,7 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
             'Symfony\\Component\\ClassLoader\\' => 30,
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
+            'Shapefile\\' => 10,
         ),
         'R' => 
         array (
@@ -134,6 +139,10 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpGPX\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sibyx/phpgpx/src/phpGPX',
+        ),
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
@@ -253,6 +262,10 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
         'Symfony\\Bridge\\PsrHttpMessage\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
+        ),
+        'Shapefile\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/gasparesganga/php-shapefile/src/Shapefile',
         ),
         'RRule\\' => 
         array (

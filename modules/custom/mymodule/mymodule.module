@@ -13,15 +13,33 @@ function mymodule_node_presave(NodeInterface $node) {
       
 	   //ksm($node->field_endereco->getValue());
 	   //ksm($node->field_rota->getValue());
+	   
+	   $address_line1 = '';
+	   $address_line2 = '';
 	  
-	   $endereco = trim($node->field_endereco->address_line1) .' '. trim($node->field_endereco->address_line2) .','.
-	   trim($node->field_endereco->locality) .'-'. trim($node->field_endereco->administrative_area) .'-'. 
-	   trim($node->field_endereco->country_code) .','. trim($node->field_endereco->postal_code);
+	   $address_line1         = str_replace(" ","+",trim($node->field_endereco->address_line1));
+	   $address_line2         = str_replace(" ","+",trim($node->field_endereco->address_line2));
+	   $locality              = str_replace(" ","+",trim($node->field_endereco->locality));
+	   $administrative_area   = str_replace(" ","+",trim($node->field_endereco->administrative_area));                
+	   $country_code          = str_replace(" ","+",trim($node->field_endereco->country_code));
+	   $postal_code           = str_replace(" ","+",trim($node->field_endereco->postal_code));
 	  
-	   If ($node->field_endereco->address_line1) {
+	 	  
+	   $endereco = $address_line1 ;
+
+	   if ($address_line2 != '') {
+		   $endereco = $endereco ."+". $address_line2 ;   
+	   }
+	   
+	   $endereco = $endereco .",". $locality ."-". $administrative_area ."-". $country_code .",". $postal_code;
+
+
+	   If ($address_line1) {
 			$node->field_rota->uri = 'https://www.google.com/maps/dir//' . $endereco;
 			$node->field_rota->text ="Obter rota para [node:field_local_do_evento]";
        }
+	   
+	   
        
 	   //Move regra importada para rrule da data	
        // SOmente ativar quando importar do site antigo	   

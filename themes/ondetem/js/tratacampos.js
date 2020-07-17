@@ -50,6 +50,8 @@ if (typeof jQuery === 'undefined') {
 					if (myview.length == 1 ) {
 					    $("div.view-content").addClass("row-display-flex");
 						}
+						
+						
 					
           }
 		}

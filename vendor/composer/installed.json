@@ -856,9 +856,6 @@
         },
         "type": "drupal-module",
         "extra": {
-            "branch-alias": {
-                "dev-1.x": "1.x-dev"
-            },
             "drupal": {
                 "version": "8.x-1.8",
                 "datestamp": "1583988119",
@@ -2315,53 +2312,6 @@
         }
     },
     {
-        "name": "drupal/field_token_value",
-        "version": "1.0.0",
-        "version_normalized": "1.0.0.0",
-        "source": {
-            "type": "git",
-            "url": "https://git.drupalcode.org/project/field_token_value.git",
-            "reference": "8.x-1.0"
-        },
-        "dist": {
-            "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/field_token_value-8.x-1.0.zip",
-            "reference": "8.x-1.0",
-            "shasum": "ba0c70108ca09589b9fa2ecce4c7a7194cdca897"
-        },
-        "require": {
-            "drupal/core": "~8.0",
-            "drupal/token": "*"
-        },
-        "type": "drupal-module",
-        "extra": {
-            "drupal": {
-                "version": "8.x-1.0",
-                "datestamp": "1503548344",
-                "security-coverage": {
-                    "status": "covered",
-                    "message": "Covered by Drupal's security advisory policy"
-                }
-            }
-        },
-        "installation-source": "dist",
-        "notification-url": "https://packages.drupal.org/8/downloads",
-        "license": [
-            "GPL-2.0-or-later"
-        ],
-        "authors": [
-            {
-                "name": "haydent",
-                "homepage": "https://www.drupal.org/user/2763191"
-            }
-        ],
-        "description": "Provides a field allowing the value to be set using a string containing tokens.",
-        "homepage": "https://www.drupal.org/project/field_token_value",
-        "support": {
-            "source": "https://git.drupalcode.org/project/field_token_value"
-        }
-    },
-    {
         "name": "drupal/fontawesome",
         "version": "2.17.0",
         "version_normalized": "2.17.0.0",
@@ -2679,30 +2629,44 @@
     },
     {
         "name": "drupal/geolocation",
-        "version": "1.11.0",
-        "version_normalized": "1.11.0.0",
+        "version": "3.2.0",
+        "version_normalized": "3.2.0.0",
         "source": {
             "type": "git",
             "url": "https://git.drupalcode.org/project/geolocation.git",
-            "reference": "8.x-1.11"
+            "reference": "8.x-3.2"
         },
         "dist": {
             "type": "zip",
-            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-1.11.zip",
-            "reference": "8.x-1.11",
-            "shasum": "a401d5c576a8c4886e84272f2ca2a3c524c46869"
+            "url": "https://ftp.drupal.org/files/projects/geolocation-8.x-3.2.zip",
+            "reference": "8.x-3.2",
+            "shasum": "ed6b1e594dd0ad95e52681130a8bcae85d68c305"
         },
         "require": {
-            "drupal/core": "*"
+            "drupal/core": "^8.7.7 || ^9",
+            "gasparesganga/php-shapefile": ">=3.2",
+            "sibyx/phpgpx": "^1.0"
+        },
+        "require-dev": {
+            "drupal/address": "*",
+            "drupal/geofield": "*",
+            "drupal/geolocation_demo": "*",
+            "drupal/geolocation_geometry": "*",
+            "drupal/geolocation_geometry_data": "*",
+            "drupal/geolocation_geometry_natural_earth_countries": "*",
+            "drupal/geolocation_google_maps": "*",
+            "drupal/geolocation_google_maps_demo": "*",
+            "drupal/geolocation_google_static_maps": "*",
+            "drupal/geolocation_leaflet": "*",
+            "drupal/search_api": "*",
+            "drupal/search_api_location": "*",
+            "drupal/search_api_location_views": "*"
         },
         "type": "drupal-module",
         "extra": {
-            "branch-alias": {
-                "dev-1.x": "1.x-dev"
-            },
             "drupal": {
-                "version": "8.x-1.11",
-                "datestamp": "1505687043",
+                "version": "8.x-3.2",
+                "datestamp": "1590319155",
                 "security-coverage": {
                     "status": "covered",
                     "message": "Covered by Drupal's security advisory policy"
@@ -2712,22 +2676,87 @@
         "installation-source": "dist",
         "notification-url": "https://packages.drupal.org/8/downloads",
         "license": [
-            "GPL-2.0+"
+            "GPL-2.0-or-later"
         ],
         "authors": [
             {
-                "name": "ChristianAdamski",
-                "homepage": "https://www.drupal.org/user/867880"
+                "name": "derjochenmeyer",
+                "homepage": "https://www.drupal.org/u/derjochenmeyer"
             },
             {
-                "name": "derjochenmeyer",
-                "homepage": "https://www.drupal.org/user/106134"
+                "name": "cadamski",
+                "homepage": "https://www.drupal.org/u/cadamski"
             }
         ],
         "description": "Provides a simple geolocation Drupal field type to store and display location data (lat, lng).",
         "homepage": "https://www.drupal.org/project/geolocation",
         "support": {
-            "source": "https://git.drupalcode.org/project/geolocation"
+            "source": "http://git.drupal.org/project/geolocation.git",
+            "issues": "https://www.drupal.org/project/issues/geolocation"
+        }
+    },
+    {
+        "name": "drupal/honeypot",
+        "version": "2.0.0",
+        "version_normalized": "2.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/honeypot.git",
+            "reference": "2.0.0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/honeypot-2.0.0.zip",
+            "reference": "2.0.0",
+            "shasum": "6f8701f5be173595318e6afe9ff744edb324f85c"
+        },
+        "require": {
+            "drupal/core": "^8.0 || ^9.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "2.0.0",
+                "datestamp": "1588105107",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Jeff Geerling",
+                "homepage": "https://www.drupal.org/user/213194",
+                "email": "geerlingguy@mac.com"
+            },
+            {
+                "name": "geerlingguy",
+                "homepage": "https://www.drupal.org/user/389011"
+            },
+            {
+                "name": "vijaycs85",
+                "homepage": "https://www.drupal.org/user/93488"
+            }
+        ],
+        "description": "Mitigates spam form submissions using the honeypot method.",
+        "homepage": "https://www.drupal.org/project/honeypot",
+        "keywords": [
+            "deterrent",
+            "form",
+            "honeypot",
+            "honeytrap",
+            "php",
+            "spam"
+        ],
+        "support": {
+            "source": "https://git.drupalcode.org/project/honeypot",
+            "issues": "https://www.drupal.org/project/issues/honeypot"
         }
     },
     {
@@ -3373,6 +3402,130 @@
         }
     },
     {
+        "name": "drupal/webform",
+        "version": "5.19.0",
+        "version_normalized": "5.19.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://git.drupalcode.org/project/webform.git",
+            "reference": "8.x-5.19"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://ftp.drupal.org/files/projects/webform-8.x-5.19.zip",
+            "reference": "8.x-5.19",
+            "shasum": "90a2084c2647bca791cc8b18a7e2a3b49f3da7ea"
+        },
+        "require": {
+            "drupal/core": "^8.8"
+        },
+        "require-dev": {
+            "drupal/address": "~1.0",
+            "drupal/bootstrap": "~3.0",
+            "drupal/captcha": "~1.0",
+            "drupal/chosen": "~2.0",
+            "drupal/clientside_validation": "~3.0",
+            "drupal/clientside_validation_jquery": "*",
+            "drupal/devel": "~3.0",
+            "drupal/entity_print": "~2.0",
+            "drupal/gnode": "*",
+            "drupal/group": "~1.0",
+            "drupal/lingotek": "~3.0",
+            "drupal/mailsystem": "~4.0",
+            "drupal/paragraphs": "~1.0",
+            "drupal/select2": "~1.0",
+            "drupal/smtp": "~1.0",
+            "drupal/styleguide": "~1.0",
+            "drupal/telephone_validation": "~2.0",
+            "drupal/token": "~1.0",
+            "drupal/webform_access": "*",
+            "drupal/webform_attachment": "*",
+            "drupal/webform_clientside_validation": "*",
+            "drupal/webform_devel": "*",
+            "drupal/webform_entity_print": "*",
+            "drupal/webform_group": "*",
+            "drupal/webform_node": "*",
+            "drupal/webform_options_limit": "*",
+            "drupal/webform_scheduled_email": "*",
+            "drupal/webform_share": "*",
+            "drupal/webform_ui": "*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "drupal": {
+                "version": "8.x-5.19",
+                "datestamp": "1593681136",
+                "security-coverage": {
+                    "status": "covered",
+                    "message": "Covered by Drupal's security advisory policy"
+                }
+            },
+            "drush": {
+                "services": {
+                    "drush.services.yml": "^9"
+                }
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "https://packages.drupal.org/8/downloads",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Jacob Rockowitz (jrockowitz)",
+                "homepage": "https://www.drupal.org/u/jrockowitz",
+                "role": "Maintainer"
+            },
+            {
+                "name": "Alexander Trotsenko (bucefal91)",
+                "homepage": "https://www.drupal.org/u/bucefal91",
+                "role": "Co-maintainer"
+            },
+            {
+                "name": "Contributors",
+                "homepage": "https://www.drupal.org/node/7404/committers",
+                "role": "Contributor"
+            },
+            {
+                "name": "fenstrat",
+                "homepage": "https://www.drupal.org/user/362649"
+            },
+            {
+                "name": "jrockowitz",
+                "homepage": "https://www.drupal.org/user/371407"
+            },
+            {
+                "name": "podarok",
+                "homepage": "https://www.drupal.org/user/116002"
+            },
+            {
+                "name": "quicksketch",
+                "homepage": "https://www.drupal.org/user/35821"
+            },
+            {
+                "name": "sanchiz",
+                "homepage": "https://www.drupal.org/user/1671246"
+            },
+            {
+                "name": "tedbow",
+                "homepage": "https://www.drupal.org/user/240860"
+            },
+            {
+                "name": "torotil",
+                "homepage": "https://www.drupal.org/user/865256"
+            }
+        ],
+        "description": "Enables the creation of webforms and questionnaires.",
+        "homepage": "https://drupal.org/project/webform",
+        "support": {
+            "source": "https://git.drupalcode.org/project/webform",
+            "issues": "https://www.drupal.org/project/issues/webform?version=8.x",
+            "docs": "https://www.drupal.org/docs/8/modules/webform",
+            "forum": "https://drupal.stackexchange.com/questions/tagged/webform"
+        }
+    },
+    {
         "name": "easyrdf/easyrdf",
         "version": "0.9.1",
         "version_normalized": "0.9.1.0",
@@ -3497,24 +3650,74 @@
         ]
     },
     {
-        "name": "geocoder-php/common-http",
-        "version": "4.2.0",
-        "version_normalized": "4.2.0.0",
+        "name": "gasparesganga/php-shapefile",
+        "version": "v3.3.0",
+        "version_normalized": "3.3.0.0",
         "source": {
             "type": "git",
-            "url": "https://github.com/geocoder-php/php-common-http.git",
-            "reference": "8e666f89d0b87121595ec2f5134a9f54bf4b0cd2"
+            "url": "https://github.com/gasparesganga/php-shapefile.git",
+            "reference": "af9b7221ddaf36a85a37e6a23281bd53ed750c4d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/8e666f89d0b87121595ec2f5134a9f54bf4b0cd2",
-            "reference": "8e666f89d0b87121595ec2f5134a9f54bf4b0cd2",
+            "url": "https://api.github.com/repos/gasparesganga/php-shapefile/zipball/af9b7221ddaf36a85a37e6a23281bd53ed750c4d",
+            "reference": "af9b7221ddaf36a85a37e6a23281bd53ed750c4d",
             "shasum": ""
         },
         "require": {
-            "php": "^7.0",
+            "php": ">=5.4.0"
+        },
+        "time": "2020-05-23T09:10:21+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Shapefile\\": "src/Shapefile/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Gaspare Sganga",
+                "email": "contact@gasparesganga.com",
+                "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+                "role": "Developer"
+            }
+        ],
+        "description": "PHP library to read and write ESRI Shapefiles, compatible with WKT and GeoJSON",
+        "homepage": "https://gasparesganga.com/labs/php-shapefile/",
+        "keywords": [
+            "ESRI",
+            "Shapefile",
+            "dbf",
+            "geojson",
+            "shape",
+            "shp",
+            "wkt"
+        ]
+    },
+    {
+        "name": "geocoder-php/common-http",
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/geocoder-php/php-common-http.git",
+            "reference": "2995af04aa877ecb705054556bdea540662db971"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/geocoder-php/php-common-http/zipball/2995af04aa877ecb705054556bdea540662db971",
+            "reference": "2995af04aa877ecb705054556bdea540662db971",
+            "shasum": ""
+        },
+        "require": {
+            "php": "^7.2",
             "php-http/client-implementation": "^1.0",
-            "php-http/discovery": "^1.4",
+            "php-http/discovery": "^1.6",
             "php-http/httplug": "^1.0 || ^2.0",
             "php-http/message-factory": "^1.0.2",
             "psr/http-message": "^1.0",
@@ -3522,13 +3725,13 @@
             "willdurand/geocoder": "^4.0"
         },
         "require-dev": {
-            "nyholm/psr7": "^0.2.2",
+            "nyholm/psr7": "^1.0",
             "php-http/message": "^1.0",
             "php-http/mock-client": "^1.0",
-            "phpunit/phpunit": "6.3.*",
+            "phpunit/phpunit": "^7.5",
             "symfony/stopwatch": "~2.5"
         },
-        "time": "2018-11-15T22:27:27+00:00",
+        "time": "2020-07-04T13:18:10+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3562,22 +3765,22 @@
     },
     {
         "name": "geocoder-php/google-maps-provider",
-        "version": "4.4.0",
-        "version_normalized": "4.4.0.0",
+        "version": "4.5.0",
+        "version_normalized": "4.5.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/geocoder-php/google-maps-provider.git",
-            "reference": "307ca3590b67d23d0658808bb3615f2be3154eee"
+            "reference": "830e5cd42eba6cb42a7a72788049edcb73f2d632"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/geocoder-php/google-maps-provider/zipball/307ca3590b67d23d0658808bb3615f2be3154eee",
-            "reference": "307ca3590b67d23d0658808bb3615f2be3154eee",
+            "url": "https://api.github.com/repos/geocoder-php/google-maps-provider/zipball/830e5cd42eba6cb42a7a72788049edcb73f2d632",
+            "reference": "830e5cd42eba6cb42a7a72788049edcb73f2d632",
             "shasum": ""
         },
         "require": {
             "geocoder-php/common-http": "^4.0",
-            "php": "^7.0",
+            "php": "^7.2",
             "willdurand/geocoder": "^4.0"
         },
         "provide": {
@@ -3587,9 +3790,9 @@
             "geocoder-php/provider-integration-tests": "^1.0",
             "php-http/curl-client": "^1.7",
             "php-http/message": "^1.0",
-            "phpunit/phpunit": "^6.5 || ^7.5"
+            "phpunit/phpunit": "^7.5"
         },
-        "time": "2019-04-26T20:17:17+00:00",
+        "time": "2020-07-04T13:18:10+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -3611,7 +3814,7 @@
         ],
         "authors": [
             {
-                "name": "William DURAND",
+                "name": "William Durand",
                 "email": "william.durand1@gmail.com"
             }
         ],
@@ -4787,6 +4990,50 @@
             "recurring",
             "rrule"
         ]
+    },
+    {
+        "name": "sibyx/phpgpx",
+        "version": "1.0-RC5",
+        "version_normalized": "1.0.0.0-RC5",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Sibyx/phpGPX.git",
+            "reference": "0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/Sibyx/phpGPX/zipball/0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e",
+            "reference": "0bb616dda0b6ff3e78c72167087c8ffe8b1cbf2e",
+            "shasum": ""
+        },
+        "require": {
+            "lib-libxml": "*",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "evert/phpdoc-md": "~0.2.0",
+            "phpunit/phpunit": "^6.5"
+        },
+        "time": "2018-01-25T12:25:51+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "phpGPX\\": "src/phpGPX/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Jakub Dubec",
+                "email": "jakub.dubec@gmail.com",
+                "homepage": "https://jakubdubec.me"
+            }
+        ],
+        "description": "A simple PHP library for GPX import/export"
     },
     {
         "name": "stack/builder",
@@ -6553,31 +6800,31 @@
     },
     {
         "name": "willdurand/geocoder",
-        "version": "4.2.2",
-        "version_normalized": "4.2.2.0",
+        "version": "4.3.0",
+        "version_normalized": "4.3.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/geocoder-php/php-common.git",
-            "reference": "31bc59626c737871c3d5cc4dc9bc468a7668d0d1"
+            "reference": "199d6a853947a5051e7ff14d35849759009bad5d"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/31bc59626c737871c3d5cc4dc9bc468a7668d0d1",
-            "reference": "31bc59626c737871c3d5cc4dc9bc468a7668d0d1",
+            "url": "https://api.github.com/repos/geocoder-php/php-common/zipball/199d6a853947a5051e7ff14d35849759009bad5d",
+            "reference": "199d6a853947a5051e7ff14d35849759009bad5d",
             "shasum": ""
         },
         "require": {
-            "php": "^7.0"
+            "php": "^7.2"
         },
         "require-dev": {
             "nyholm/nsa": "^1.1",
-            "phpunit/phpunit": "^6.5 || ^7.5",
+            "phpunit/phpunit": "^7.5",
             "symfony/stopwatch": "~2.5"
         },
         "suggest": {
             "symfony/stopwatch": "If you want to use the TimedGeocoder"
         },
-        "time": "2020-01-22T09:02:24+00:00",
+        "time": "2020-07-04T13:18:10+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
