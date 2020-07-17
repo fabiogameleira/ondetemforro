@@ -14,9 +14,9 @@ function mymodule_node_presave(NodeInterface $node) {
 	   //ksm($node->field_endereco->getValue());
 	   //ksm($node->field_rota->getValue());
 	  
-	   $endereco = $node->field_endereco->address_line1 .' '. $node->field_endereco->address_line2 .','.
-	   $node->field_endereco->locality .'-'. $node->field_endereco->administrative_area .'-'. 
-	   $node->field_endereco->country_code .','. $node->field_endereco->postal_code;
+	   $endereco = trim($node->field_endereco->address_line1) .' '. trim($node->field_endereco->address_line2) .','.
+	   trim($node->field_endereco->locality) .'-'. trim($node->field_endereco->administrative_area) .'-'. 
+	   trim($node->field_endereco->country_code) .','. trim($node->field_endereco->postal_code);
 	  
 	   If ($node->field_endereco->address_line1) {
 			$node->field_rota->uri = 'https://www.google.com/maps/dir//' . $endereco;
