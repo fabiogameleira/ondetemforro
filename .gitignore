@@ -7,7 +7,6 @@
 /sites/*/*services*.yml
 /sites/default/settings.php
 /sites/default/files/*.*
-*.txt
 backup
 
 # Ignore paths that may contain user-generated content
