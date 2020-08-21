@@ -24,11 +24,6 @@ class GeolocationViewsProximityByEntityTest extends BrowserTestBase {
   ];
 
   /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'stark';
-
-  /**
    * Tests the proximity sort.
    */
   public function testEmpty() {

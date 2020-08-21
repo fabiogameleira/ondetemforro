@@ -39,7 +39,6 @@ if (typeof jQuery === 'undefined') {
 					}	
 									
 					// TROCA PAÍS
-					
 					pais.on('change', function() {
 						
                         // guarda conteúdo do filtro

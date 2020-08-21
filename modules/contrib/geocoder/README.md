@@ -65,14 +65,17 @@ Geocode functionalities on Entity fields from the Drupal backend:
   Geo Formats (via Dumpers). It also enables the File provider/formatter
   functionalities for Geocoding valid Exif Geo data present into JPG images;
   functionalities for Geocoding valid Exif Geo data present into JPG images;
+
 * The **geocoder_geofield** module provides integration with Geofield
   (module/field type) and the ability to both use it as target of Geocode or
   source of Reverse Geocode with the other fields. It also enables the
   provider/formatter functionalities for Geocoding valid GPX, KML and GeoJson
   data present into files contents;
+
 * The **geocoder_address** module provides integration with Address
   (module/field type) and the ability to both use it as target of Reverse
-  Geocode or source of Geocode with the other fields;
+  Geocode from a Geofield (module/field type or source of Geocode with the other
+  fields;
 
 From the Geocoder configuration page it is possible to setup custom plugins
 options.
@@ -116,7 +119,7 @@ This is the list of plugins that has been installed using Composer and are
 available to configure in the UI.
 
 ```php
-\Drupal::service('plugin.manager.geocoder.provider')->getDefinitions()
+\Drupal::service('plugin.manager.geocoder.provider')->getDefinitions();
 ```
 
 ## Get a list of available Dumper plugins
@@ -307,32 +310,36 @@ wrong configurations causes.
 
 ## Site builders
 
-Geocoder 3.x (working with Drupal 9 and 8) is not back compatible with
-Geocoder 2.x (working with Drupal 8), and no upgrade path has been provided so
-for general and fields configurations settings.
+1. When upgrading to the new Geocoder 8.x-3.x branch you would
+   need to remove the Geocoder 8.x-2.x branch before
+   (`composer remove drupal/geocoder`), and make sure also its
+   dependency willdurand/geocoder": "^3.0" library is removed.
+   (eventually run also: `composer remove willdurand/geocoder`);
 
-At the moment, upgrading from Geocoder 2.x to 3.x requires the following steps;
+2. Require the new default Geocoder 3.x version:
+   `composer require drupal/geocoder`
+   (this will also install the dependency willdurand/geocoder
+   in its "^4.0" version)
 
-- Uninstall Geocoder 2.x, via Drupal backend or with `drush pmu geocoder`;
-- Remove Geocoder 2.x via composer: `composer require drupal/geocoder`;
-- Make sure also its dependency willdurand/geocoder": "^3.0" library is removed;
+3. Choose the [Geocoder Provider](https://packagist.org/providers/geocoder-php/provider-implementation)
+   you want to use and also add it as a required dependency to your project.
+   For    example if you want to use Google Maps as your provider:
+   `composer require geocoder-php/google-maps-provider`
 
-- Require the new default Geocoder 3.x version:
-`composer require drupal/geocoder`
- (this will install also the dependency willdurand/geocoder": "^4.0" library)
-- Enable Geocoder 3.x version, via Drupal backend or with `drush en geocoder`;
+   It will be added as geocoder provider option choice in the "add provider"
+   select of the Geocoder module Providers settings page
+   ('/admin/config/system/geocoder/geocoder-provider').
 
-- Eventually enable its submodules, via Drupal backend or with
-`drush en geocoder_field geocoder_geofield geocoder_address`
+4. Run the database updates, either by visiting `update.php` or running the
+   `drush updb` command.
 
-- Choose the [Geocoder Provider](https://packagist.org/providers/geocoder-php/provider-implementation)
-you want to use and also add it as a required dependency to your project. For
-example if you want to use Google Maps as your provider:
+5. Check the existing Geocoder provider settings or add new ones from the
+   Geocoder module Providers settings page
+   ('/admin/config/system/geocoder/geocoder-provider')
 
-    ```$ composer require geocoder-php/google-maps-provider```
-
-    It will be added as geocoder provider option choice in the "add provider"
-select of the Geocoder module settings page ('/admin/config/system/geocoder').
+6. Set back (update) the Geocoding & Reverse Geocoding settings for each field
+   you previously applied them, as they would have been lost in
+   (won't work since) the upgrade.
 
 ## Developers
 

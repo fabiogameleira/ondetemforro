@@ -6,7 +6,6 @@ use Drupal\Core\Plugin\DefaultPluginManager;
 use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\Core\Extension\ModuleHandlerInterface;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Component\Utility\NestedArray;
 
 /**
  * Search plugin manager.
@@ -42,7 +41,8 @@ class GeocoderManager extends DefaultPluginManager {
    *   Geocoder instance.
    */
   public function getGeocoder($id, array $configuration = []) {
-    if (!$this->hasDefinition($id)) {
+    $definitions = $this->getDefinitions();
+    if (empty($definitions[$id])) {
       return FALSE;
     }
     try {
@@ -59,6 +59,38 @@ class GeocoderManager extends DefaultPluginManager {
   }
 
   /**
+   * Get location capable geocoder definitions.
+   *
+   * @return array
+   *   List of location capable geocoder definitions.
+   */
+  public function getLocationCapableGeocoders() {
+    $location_capable_geocoders = [];
+    foreach ($this->getDefinitions() as $id => $definition) {
+      if (!empty($definition['locationCapable'])) {
+        $location_capable_geocoders[$id] = $definition;
+      }
+    }
+    return $location_capable_geocoders;
+  }
+
+  /**
+   * Get boundary capable geocoder definitions.
+   *
+   * @return array
+   *   List of boundary capable geocoder definitions.
+   */
+  public function getBoundaryCapableGeocoders() {
+    $boundary_capable_geocoders = [];
+    foreach ($this->getDefinitions() as $id => $definition) {
+      if (!empty($definition['boundaryCapable'])) {
+        $boundary_capable_geocoders[$id] = $definition;
+      }
+    }
+    return $boundary_capable_geocoders;
+  }
+
+  /**
    * Return settings array for geocoder after select change.
    *
    * @param array $form
@@ -70,13 +102,48 @@ class GeocoderManager extends DefaultPluginManager {
    *   Settings form.
    */
   public static function addGeocoderSettingsFormAjax(array $form, FormStateInterface $form_state) {
-    $triggering_element_parents = $form_state->getTriggeringElement()['#array_parents'];
+    $triggering_element = $form_state->getTriggeringElement()['#parents'];
+    array_pop($triggering_element);
 
-    $settings_element_parents = $triggering_element_parents;
-    array_pop($settings_element_parents);
-    $settings_element_parents[] = 'settings';
+    $target = $triggering_element;
+    $target[] = 'plugin_id';
+    $plugin_id = $form_state->getValue($target, '');
 
-    return NestedArray::getValue($form, $settings_element_parents);
+    $target = $triggering_element;
+    $target[] = 'settings';
+    $geocoder_settings = $form_state->getValue($target, []);
+
+    /** @var \Drupal\geolocation\GeocoderInterface $geocoder_plugin */
+    $geocoder_plugin = \Drupal::service('plugin.manager.geolocation.geocoder')->getGeocoder($plugin_id, $geocoder_settings);
+
+    if (empty($geocoder_plugin)) {
+      $return = [
+        '#type' => 'html_tag',
+        '#tag' => 'span',
+        '#value' => t('Non-existing geocoder plugin requested.'),
+      ];
+    }
+    else {
+      $geocoder_settings_form = $geocoder_plugin->getOptionsForm();
+
+      if (!empty($geocoder_settings_form)) {
+        $return = $geocoder_settings_form;
+      }
+      else {
+        $return = [
+          '#type' => 'html_tag',
+          '#tag' => 'span',
+          '#value' => t("No settings available."),
+        ];
+      }
+    }
+
+    $return = array_merge_recursive($return, [
+      '#prefix' => '<div id="geocoder-plugin-settings">',
+      '#suffix' => '</div>',
+    ]);
+
+    return $return;
   }
 
 }

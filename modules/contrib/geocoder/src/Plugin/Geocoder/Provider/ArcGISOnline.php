@@ -5,11 +5,11 @@ namespace Drupal\geocoder\Plugin\Geocoder\Provider;
 use Drupal\geocoder\ConfigurableProviderUsingHandlerWithAdapterBase;
 
 /**
- * Provides an ArcGISOnline geocoder provider plugin.
+ * Provides an ArcGisOnline geocoder provider plugin.
  *
  * @GeocoderProvider(
  *   id = "arcgisonline",
- *   name = "ArcGISOnline",
+ *   name = "ArcGisOnline",
  *   handler = "\Geocoder\Provider\ArcGISOnline\ArcGISOnline",
  *   arguments = {
  *     "sourceCountry" = ""

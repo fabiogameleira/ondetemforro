@@ -13,12 +13,15 @@ field.field.*.*.*.third_party.geocoder_field:
     field:
       type: string
       label: 'Field to geocode to or from depending on the "method" in use.'
-    hidden:
+    skip_not_empty_value:
       type: boolean
-      label: 'Hide field'
+      label: 'Skip Geocode/Reverse Geocode if target value is not empty'
     disabled:
       type: boolean
       label: 'Disable field'
+    hidden:
+      type: boolean
+      label: 'Hide field'
     providers:
       type: sequence
       label: 'Geocoding providers'

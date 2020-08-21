@@ -31,11 +31,6 @@ class GeolocationViewsProximityArgumentTest extends BrowserTestBase {
   protected $viewsPath = 'geolocation-demo/proximity_argument_and_sort';
 
   /**
-   * {@inheritdoc}
-   */
-  protected $defaultTheme = 'stark';
-
-  /**
    * Tests the CommonMap style.
    */
   public function testProximityNoLocations() {
@@ -87,7 +82,7 @@ class GeolocationViewsProximityArgumentTest extends BrowserTestBase {
     $this->assertSession()->responseNotContains('Proximity 2');
     $this->assertSession()->responseNotContains('Proximity 3');
 
-    $this->drupalGet($this->viewsPath . '/52,47<=1mi');
+    $this->drupalGet($this->viewsPath . '/52,47<=1miles');
     $this->assertSession()->statusCodeEquals(200);
 
     $this->assertSession()->responseContains('Proximity 1');
@@ -125,7 +120,7 @@ class GeolocationViewsProximityArgumentTest extends BrowserTestBase {
       ],
     ])->save();
 
-    $this->drupalGet($this->viewsPath . '/51.4545,-2.5879<5mi');
+    $this->drupalGet($this->viewsPath . '/51.4545,-2.5879<5miles');
     $this->assertSession()->statusCodeEquals(200);
 
     $this->assertSession()->responseContains('Proximity 4');

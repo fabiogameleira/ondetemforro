@@ -6,23 +6,24 @@
  */
 
 /**
- * Alter the map based widgets.
- *
- * @param array $element
- *   Element.
- * @param mixed $context
- *   Context.
- *
- * @code
- *   $context = [
- *     'widget' => \Drupal\geolocation\Plugin\Field\FieldWidget\GeolocationMapWidgetBase
- *     'form_state' => \Drupal\Core\Form\FormStateInterface $form_state
- *     'field_definition' => \Drupal\Core\Field\FieldDefinitionInterface $field_definition
- *   ];
- * @endcode
- *
- * @see \Drupal\geolocation\Plugin\Field\FieldWidget\GeolocationMapWidgetBase
+ * @addtogroup hooks
+ * @{
  */
-function hook_geolocation_field_map_widget_alter(array &$element, $context) {
-  // Do something.
+
+/**
+ * Define additional parameters to the Google Maps API URL.
+ *
+ * @return array
+ *   Parameters
+ */
+function hook_geolocation_google_maps_parameters() {
+  return [
+    'libraries' => [
+      'places',
+    ],
+  ];
 }
+
+/**
+ * @} End of "addtogroup hooks".
+ */

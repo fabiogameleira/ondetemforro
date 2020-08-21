@@ -4,6 +4,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 use Drupal\node\NodeInterface;
 
 
+
 /**
  * Implements hook_ENTITY_TYPE_presave() for node entities.
  */
@@ -13,6 +14,7 @@ function mymodule_node_presave(NodeInterface $node) {
       
 	   //ksm($node->field_endereco->getValue());
 	   //ksm($node->field_rota->getValue());
+   
 	   
 	   $address_line1 = '';
 	   $address_line2 = '';

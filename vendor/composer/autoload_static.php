@@ -32,10 +32,6 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
     );
 
     public static $prefixLengthsPsr4 = array (
-        'p' => 
-        array (
-            'phpGPX\\' => 7,
-        ),
         'Z' => 
         array (
             'Zend\\Stdlib\\' => 12,
@@ -74,7 +70,6 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
             'Symfony\\Component\\ClassLoader\\' => 30,
             'Symfony\\Cmf\\Component\\Routing\\' => 30,
             'Symfony\\Bridge\\PsrHttpMessage\\' => 30,
-            'Shapefile\\' => 10,
         ),
         'R' => 
         array (
@@ -84,6 +79,7 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
         array (
             'Psr\\Log\\' => 8,
             'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
             'Psr\\Container\\' => 14,
         ),
         'M' => 
@@ -139,10 +135,6 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
     );
 
     public static $prefixDirsPsr4 = array (
-        'phpGPX\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/sibyx/phpgpx/src/phpGPX',
-        ),
         'Zend\\Stdlib\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-stdlib/src',
@@ -263,10 +255,6 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
         array (
             0 => __DIR__ . '/..' . '/symfony/psr-http-message-bridge',
         ),
-        'Shapefile\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/gasparesganga/php-shapefile/src/Shapefile',
-        ),
         'RRule\\' => 
         array (
             0 => __DIR__ . '/..' . '/rlanvin/php-rrule/src',
@@ -278,6 +266,10 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
         ),
         'Psr\\Container\\' => 
         array (
@@ -478,6 +470,7 @@ class ComposerStaticInitf58dd9d2e64a825de7df7497c1354a33
         'SessionUpdateTimestampHandlerInterface' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'TypeError' => __DIR__ . '/..' . '/symfony/polyfill-php70/Resources/stubs/TypeError.php',
+        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
         'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'geoPHP' => __DIR__ . '/..' . '/phayes/geophp/geoPHP.inc',
     );

@@ -48,7 +48,7 @@ class Geocoder implements GeocoderInterface {
       try {
         $result = $provider->getPlugin()->geocode($data);
         if (!isset($result) || $result->isEmpty()) {
-          throw new \Exception();
+          throw new \Exception(sprintf('Unable to geocode "%s" with the %s provider.', $data, $provider->id()));
         }
         return $result;
       }
@@ -68,7 +68,7 @@ class Geocoder implements GeocoderInterface {
       try {
         $result = $provider->getPlugin()->reverse($latitude, $longitude);
         if (!isset($result) || $result->isEmpty()) {
-          throw new \Exception();
+          throw new \Exception(sprintf('Unable to reverse geocode coordinates %s and %s with the %s provider.', $latitude, $longitude, $provider->id()));
         }
         return $result;
       }

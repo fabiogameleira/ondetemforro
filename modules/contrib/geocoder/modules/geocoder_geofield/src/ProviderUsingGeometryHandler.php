@@ -3,6 +3,7 @@
 namespace Drupal\geocoder_geofield;
 
 use Drupal\geocoder\ProviderUsingHandlerBase;
+use Geocoder\StatefulGeocoder;
 
 /**
  * Provides a base class for providers using handlers.

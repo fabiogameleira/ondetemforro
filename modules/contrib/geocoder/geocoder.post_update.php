@@ -8,6 +8,7 @@
 declare(strict_types = 1);
 
 use Drupal\geocoder\Entity\GeocoderProvider;
+use Drupal\Core\Entity\EntityStorageException;
 
 /**
  * Convert simple provider configuration to provider entities.
@@ -20,12 +21,25 @@ function geocoder_post_update_convert_simple_config_to_entities(): void {
   $config = $config_factory->getEditable('geocoder.settings');
   $plugin_definitions = \Drupal::service('plugin.manager.geocoder.provider')->getDefinitions();
   foreach ($config->get('plugins_options') as $plugin_id => $configuration) {
-    GeocoderProvider::create([
-      'id' => $plugin_id,
-      'label' => $plugin_definitions[$plugin_id]['name'],
-      'plugin' => $plugin_id,
-      'configuration' => $configuration,
-    ])->save();
+    if (!isset($plugin_definitions[$plugin_id])) {
+      continue;
+    }
+
+    // Change key case to match the new version.
+    $configuration['apiKey'] = $configuration['apikey'];
+    unset($configuration['apikey']);
+
+    try {
+      GeocoderProvider::create([
+        'id' => $plugin_id,
+        'label' => $plugin_definitions[$plugin_id]['name'],
+        'plugin' => $plugin_id,
+        'configuration' => $configuration,
+      ])->save();
+    }
+    catch (EntityStorageException $e) {
+      watchdog_exception('geocoder_provider', $e);
+    }
   }
   $config->clear('plugins_options');
   $config->save();

@@ -9,18 +9,19 @@ if (typeof jQuery === 'undefined') {
 					var estado = $("#edit-field-estado-value");
 					var troca_estado = $(".form-item-field-estado-value");
 					
-					var dia = $( "#edit-field-data-value" );		
+					var dia = $( "#edit-field-data-value" )[0].value ;					
 					
-					if (dia.val() == '') {
+					if ((dia == 'today') || (dia == '') ) {
 						
 						hoje = new Date();
 						
-						var twoDigitday = ((hoje.getDate().length+1) === 1)? (hoje.getDate()) : '0' + (hoje.getDate());
+						var twoDigitday = ((hoje.getDate().length+1) === 1)? (hoje.getDate()) : (hoje.getDate());
 						var twoDigitMonth = ((hoje.getMonth().length+1) === 1)? (hoje.getMonth()+1) : '0' + (hoje.getMonth()+1);
  
-						var currentDate =  hoje.getFullYear() + "-" + twoDigitMonth + "-" + twoDigitday ;
+						var currentDate =  hoje.getFullYear() + "-" +  twoDigitMonth + "-" +  twoDigitday ;
 		
-						dia.val(currentDate) ;
+						//dia.val(currentDate) ;
+						$( "#edit-field-data-value" )[0].value = currentDate;
 						
 					}
 					
@@ -36,6 +37,23 @@ if (typeof jQuery === 'undefined') {
 							troca_estado.show();
 							}	
 						});
+						
+					$("#edit-actions").on('click',function() {
+							var dia = $( "#edit-field-data-value" )[0].value ;		
+							
+							if ((dia == 'today') || (dia == '') ) {
+							    hoje = new Date();
+						
+								var twoDigitday = ((hoje.getDate().length+1) === 1)? (hoje.getDate()) : (hoje.getDate());
+								var twoDigitMonth = ((hoje.getMonth().length+1) === 1)? (hoje.getMonth()+1) : '0' + (hoje.getMonth()+1);
+		 
+								var currentDate =  hoje.getFullYear() + "-" +  twoDigitMonth + "-" +  twoDigitday ;
+				
+								//dia.val(currentDate) ;
+								$( "#edit-field-data-value" )[0].value = currentDate;
+						}
+					});
+					
 
 					//$(".date-display-single").html(function(index, text) {
 					//return text.replace("<br><br><br>","");

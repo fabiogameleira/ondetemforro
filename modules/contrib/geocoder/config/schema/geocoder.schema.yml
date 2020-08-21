@@ -61,8 +61,7 @@ geocoder_provider.configuration.googlemaps:
   mapping:
     apiKey:
       type: string
-      nullable: true
-      label: 'Google Geocoding API key (optional)'
+      label: 'Google Geocoding API key'
       description: '<a href="https://developers.google.com/maps/documentation/javascript/get-api-key#standard-auth" target="blank">Follow these steps to get an API key</a>'
     region:
       type: string
@@ -80,8 +79,7 @@ geocoder_provider.configuration.googlemaps_business:
       description: '<a href="https://developers.google.com/maps/documentation/geocoding/get-api-key#client-id" target="blank">Authenticating your application using a client ID and digital signature</a>'
     privateKey:
       type: string
-      nullable: true
-      label: 'Private key (optional)'
+      label: 'Private key'
       description: '<a href="https://developers.google.com/maps/documentation/geocoding/get-api-key#cryptographic_signing_keys" target="blank">Getting a private cryptographic key</a>'
     apiKey:
       type: string
@@ -126,6 +124,15 @@ geocoder_provider.configuration.geonames:
       label: 'Username'
       description: 'Create a free user account at <a href="http://www.geonames.org/login" target="blank">www.geonames.org/login</a>'
 
+geocoder_provider.configuration.graphhopper:
+  type: geocoder_provider_configuration
+  label: 'GraphHopper arguments'
+  mapping:
+    apiKey:
+      type: string
+      label: 'API key'
+      description: '<a href="https://graphhopper.com/dashboard/#/register" target="blank">Getting a GraphHopper API key</a>'
+
 geocoder_provider.configuration.ipinfodb:
   type: geocoder_provider_configuration
   label: 'IpInfoDb arguments'
@@ -163,6 +170,7 @@ geocoder_provider.configuration.mapquest:
       description: '<a href="https://developer.mapquest.com/" target="blank">Get your free API key</a>'
     licensed:
       type: boolean
+      nullable: true
       label: 'Licensed'
       description: 'Whether to use MapQuest''s licensed endpoints. Uncheck to use the open endpoints.'
 
