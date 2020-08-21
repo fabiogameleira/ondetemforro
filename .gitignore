@@ -6,7 +6,7 @@
 /sites/*/*settings*.php
 /sites/*/*services*.yml
 /sites/default/settings.php
-/sites/deafult/*.*
+/sites/sites.phpsettings.local.php
 
 # Ignore paths that may contain user-generated content
 /sites/*/files
