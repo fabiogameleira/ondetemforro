@@ -6,8 +6,8 @@
 /sites/*/*settings*.php
 /sites/*/*services*.yml
 /sites/default/settings.php
-/sites/sites.phpsettings.local.php
-*.bat
+/sites/default/files/*.*
+backup
 
 # Ignore paths that may contain user-generated content
 /sites/*/files
