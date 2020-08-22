@@ -5,6 +5,5 @@ xcopy  c:\web\ondetemforro8\themes\ondetem\*.* D:\Dropbox\Desenvolvimento\web\on
 xcopy  c:\web\ondetemforro8\modules\*.* D:\Dropbox\Desenvolvimento\web\ondetemforro8\modules\*.* /Y /E
 echo GIT
 xcopy  c:\web\ondetemforro8\*.* d:\git\ondetemforro\*.* /Y /E
-del d:\git\ondetemforro\*.* /Y /E
 
 
