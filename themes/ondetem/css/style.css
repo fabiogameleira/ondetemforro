@@ -431,8 +431,8 @@ h2.location-title {
 }
 
 .eventos .views-row h2 {
-	font-size: 1.2em;
-    margin: 0;
+    font-size: 1.2em;
+    margin: 15px auto 10px;
 }
 
 .date-recur-occurrences {
@@ -869,4 +869,14 @@ legend {
 .alert-success a {
 	color: #FC0;
 	
+}
+
+h2.field-content.etiqueta-titulo a {
+    color: #2e6da4;
+    z-index: 100;
+    display: block;
+    bottom: 40px;
+    position: absolute;
+    width: 95%;
+    top: 10px;
 }
