@@ -2,7 +2,7 @@ services:
 
   geocoder:
     class: Drupal\geocoder\Geocoder
-    arguments: ['@config.factory','@plugin.manager.geocoder.provider']
+    arguments: ['@config.factory','@plugin.manager.geocoder.provider', '@module_handler']
 
   geocoder.http_adapter:
     class: Http\Adapter\Guzzle6\Client
@@ -28,12 +28,6 @@ services:
       - { name: cache.bin }
     factory: cache_factory:get
     arguments: [geocoder]
-
-  geocoder.breadcrumb:
-    class: Drupal\geocoder\GeocoderBreadcrumbBuilder
-    arguments: ['@router.request_context', '@access_manager', '@router', '@path_processor_manager', '@config.factory',  '@title_resolver', '@current_user', '@path.current', '@path.matcher']
-    tags:
-      - { name: breadcrumb_builder, priority: 100 }
 
   geocoder.throttle:
     class: Drupal\geocoder\GeocoderThrottle
