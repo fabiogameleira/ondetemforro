@@ -880,3 +880,10 @@ h2.field-content.etiqueta-titulo a {
     width: 95%;
     top: 10px;
 }
+
+#block-views-block-eventos-mapa-block-1 h2.block-title  {
+  position: absolute;
+  left: -9999em;
+  width: 1em;
+  overflow: hidden;
+}
