@@ -36,8 +36,7 @@ class DateRecurModularAlphaTest extends WebDriverTestBase {
   protected function setUp(): void {
     parent::setUp();
 
-    // @todo replace in 8.8: See 2835616.
-    $display = \entity_get_form_display('dr_entity_test', 'dr_entity_test', 'default');
+    $display = \Drupal::service('entity_display.repository')->getFormDisplay('dr_entity_test', 'dr_entity_test', 'default');
     $component = $display->getComponent('dr');
     $component['region'] = 'content';
     $component['type'] = 'date_recur_modular_alpha';

@@ -192,7 +192,7 @@ trait DateRecurModularUtilityTrait {
    *   A time zone.
    */
   protected function getCurrentUserTimeZone(): string {
-    return \drupal_get_user_timezone();
+    return \date_default_timezone_get();
   }
 
   /**

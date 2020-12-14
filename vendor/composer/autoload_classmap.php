@@ -63,6 +63,7 @@ return array(
     'Nette\\Utils\\Strings' => $vendorDir . '/nette/utils/src/Utils/Strings.php',
     'Nette\\Utils\\UnknownImageFileException' => $vendorDir . '/nette/utils/src/Utils/exceptions.php',
     'Nette\\Utils\\Validators' => $vendorDir . '/nette/utils/src/Utils/Validators.php',
+    'PEAR_Exception' => $vendorDir . '/pear/pear_exception/PEAR/Exception.php',
     'ParseError' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/ParseError.php',
     'SessionUpdateTimestampHandlerInterface' => $vendorDir . '/symfony/polyfill-php70/Resources/stubs/SessionUpdateTimestampHandlerInterface.php',
     'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',

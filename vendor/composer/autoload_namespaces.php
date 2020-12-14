@@ -9,7 +9,6 @@ return array(
     'Twig_' => array($vendorDir . '/twig/twig/lib'),
     'Stiphle' => array($vendorDir . '/davedevelopment/stiphle/src'),
     'Stack' => array($vendorDir . '/stack/builder/src'),
-    'PEAR' => array($vendorDir . '/pear/pear_exception'),
     'EasyRdf_' => array($vendorDir . '/easyrdf/easyrdf/lib'),
     'Doctrine\\Common\\Collections\\' => array($vendorDir . '/doctrine/collections/lib'),
     'Console' => array($vendorDir . '/pear/console_getopt'),
